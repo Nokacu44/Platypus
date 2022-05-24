@@ -28,8 +28,10 @@ project "PlatypusEngine"
 
   includedirs
   {
-    "%{prj.name}/vendor"
+    "%{prj.name}/vendor",
+    "%{prj.name}/vendor/SDL/include",
   }
+
 
   filter "system:windows"
     cppdialect "C++17"
@@ -41,7 +43,16 @@ project "PlatypusEngine"
       "PLATYPUS_PLATFORM_WINDOWS",
       "PLATYPUS_BUILD_DLL"
     }
+    
+    libdirs
+    {
+      "%{prj.name}/vendor/SDL/lib/x64"
+    }
 
+    links
+    {
+      "SDL2"
+    }
     postbuildcommands
     {
       ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/SandBox")
@@ -81,9 +92,9 @@ project "SandBox"
   includedirs
   {
     "%{prj.name}/vendor",
-    "PlatypusEngine/src"
+    "PlatypusEngine/src",
+    "PlatypusEngine/vendor/SDL/include"
   }
-
   filter "system:windows"
     cppdialect "C++17"
     staticruntime "On"
@@ -98,6 +109,8 @@ project "SandBox"
     {
       "PlatypusEngine"
     }
+
+
 
   filter "configurations:Debug"
     defines "PLATYPUS_DEBUG"

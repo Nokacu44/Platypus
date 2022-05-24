@@ -18,3 +18,4 @@ Platypus::Application* Platypus::CreateApplication()
 {
   return new SandBox();
 }
+

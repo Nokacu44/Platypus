@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include <SDL.h>
 
 namespace Platypus {
   class PLATYPUS_API Application
@@ -14,7 +15,7 @@ namespace Platypus {
 
 
   // To define in client
-  Application* CreateApplication();
+   Application* CreateApplication();
 
 
 }
