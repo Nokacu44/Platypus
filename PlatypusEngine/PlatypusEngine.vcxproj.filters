@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Platypus">
+      <UniqueIdentifier>{073793B4-F303-EEBF-1C1D-DC670849234E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Platypus.h" />
+    <ClInclude Include="src\Platypus\Application.h">
+      <Filter>Platypus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platypus\Core.h">
+      <Filter>Platypus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platypus\EntryPoint.h">
+      <Filter>Platypus</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Platypus\Application.cpp">
+      <Filter>Platypus</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
