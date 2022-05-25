@@ -32,6 +32,10 @@ project "PlatypusEngine"
     "%{prj.name}/vendor/SDL/include",
   }
 
+  libdirs
+  {
+    "%{prj.name}/vendor/SDL/lib/x64",
+  }
 
   filter "system:windows"
     cppdialect "C++17"
@@ -44,18 +48,14 @@ project "PlatypusEngine"
       "PLATYPUS_BUILD_DLL"
     }
     
-    libdirs
-    {
-      "%{prj.name}/vendor/SDL/lib/x64"
-    }
 
     links
     {
-      "SDL2"
+      "SDL2",
     }
     postbuildcommands
     {
-      ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/SandBox")
+      ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/SandBox"),
     }
 
   filter "configurations:Debug"

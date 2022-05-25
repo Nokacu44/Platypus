@@ -4,7 +4,9 @@
 class SandBox : public Platypus::Application
 {
 public:
-  SandBox()
+
+  SandBox (int const width,int const height) 
+    : Application::Application(width,height)
   {
 
   }
@@ -16,6 +18,8 @@ public:
 
 Platypus::Application* Platypus::CreateApplication()
 {
-  return new SandBox();
+  return new SandBox(800, 600);
 }
+
+
 

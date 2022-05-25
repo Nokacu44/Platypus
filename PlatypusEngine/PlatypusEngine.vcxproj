@@ -94,7 +94,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>vendor\SDL\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Debug-windows-x86_64\PlatypusEngine\PlatypusEngine.lib</ImportLibrary>
     </Link>
@@ -114,7 +114,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>vendor\SDL\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Release-windows-x86_64\PlatypusEngine\PlatypusEngine.lib</ImportLibrary>
     </Link>
@@ -140,7 +140,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>vendor\SDL\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Dist-windows-x86_64\PlatypusEngine\PlatypusEngine.lib</ImportLibrary>
     </Link>
@@ -153,9 +153,13 @@
     <ClInclude Include="src\Platypus\Application.h" />
     <ClInclude Include="src\Platypus\Core.h" />
     <ClInclude Include="src\Platypus\EntryPoint.h" />
+    <ClInclude Include="src\Platypus\Render2D.h" />
+    <ClInclude Include="src\Platypus\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platypus\Application.cpp" />
+    <ClCompile Include="src\Platypus\Render2D.cpp" />
+    <ClCompile Include="src\Platypus\Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

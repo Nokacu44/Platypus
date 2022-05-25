@@ -16,9 +16,21 @@
     <ClInclude Include="src\Platypus\EntryPoint.h">
       <Filter>Platypus</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platypus\Render2D.h">
+      <Filter>Platypus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platypus\Scene.h">
+      <Filter>Platypus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platypus\Application.cpp">
+      <Filter>Platypus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platypus\Render2D.cpp">
+      <Filter>Platypus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platypus\Scene.cpp">
       <Filter>Platypus</Filter>
     </ClCompile>
   </ItemGroup>
