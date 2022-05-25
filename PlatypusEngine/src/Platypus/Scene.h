@@ -1,20 +1,34 @@
 #pragma once
 #include <SDL.h>
 #include "../vendor/entt/entt.hpp"
+#include "ECS/Components.h"
 #include <iostream>
+#include "Core.h"
+
 namespace Platypus
 {
-  class Scene
+  class Entity;
+
+  class PLATYPUS_API Scene
   {
   public:
 
     Scene() = default;
-    ~Scene() = default;
+    virtual ~Scene() = default;
 
-    void OnUpdate();
-    void OnRender();
+    Entity CreateEntity();
+
+    virtual void OnUpdate() = 0;
+    virtual void OnRender() = 0;
+
+
+
   private:
     entt::registry m_Registry;
-    // friend class Entity;
+
+    void onComponentRender();
+
+    friend class Entity;
+    friend class Application;
   };
 }

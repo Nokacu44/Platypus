@@ -10,7 +10,7 @@ namespace Platypus {
   class PLATYPUS_API Application
   {
   public:
-    Application(int const width, int const height);
+    Application(char* name, int const width, int const height);
     virtual ~Application();
 
     void Run();
@@ -19,6 +19,7 @@ namespace Platypus {
 
     static int SCREEN_WIDTH;
     static int SCREEN_HEIGHT;
+    static char* TITLE;
   private:
 
     Application();

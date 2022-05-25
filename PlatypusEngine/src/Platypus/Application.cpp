@@ -8,8 +8,10 @@ namespace Platypus
 
   int Application::SCREEN_WIDTH = 0;
   int Application::SCREEN_HEIGHT = 0;
-  Application::Application(int const width, int const height)
+  char* Application::TITLE = "Game";
+  Application::Application(char* name, int const width, int const height)
   {
+    TITLE = name;
     SCREEN_WIDTH = width;
     SCREEN_HEIGHT = height;
 
@@ -17,9 +19,11 @@ namespace Platypus
     {
       // Init Renderer
       Render2D::Init();
-      std::cout << "CREATE" << std::endl;
 
     }
+
+
+
   }
 
   void Application::Run()
@@ -49,9 +53,15 @@ namespace Platypus
         running = false;
       }
       
+      if (firstScene == nullptr) std::cout << "HEY" << std::endl;
+
       firstScene->OnUpdate();
+
+      Render2D::Begin();
+
       firstScene->OnRender();
-      
+      firstScene->onComponentRender();
+      Render2D::End();
 
       frameTime = SDL_GetTicks() - frameStart;
       if (frameDelay > frameTime) {

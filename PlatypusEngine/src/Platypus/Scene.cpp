@@ -1,15 +1,28 @@
 #include "Scene.h"
 #include "Render2D.h"
-void Platypus::Scene::OnUpdate()
+#include "ECS/Entity.h"
+
+
+namespace Platypus
 {
-  static int c = 0;
-  std::cout << c++ << std::endl;
+  void Platypus::Scene::onComponentRender()
+  {
+    auto group = m_Registry.group<SpriteComponent>(entt::get<PositionComponent>);
+
+    for (auto entity : group)
+    {
+      auto [sprite, position] = group.get<SpriteComponent, PositionComponent>(entity);
+
+      Render2D::DrawSprite(sprite, position);
+
+    }
+  }
+
+  Entity Scene::CreateEntity()
+  {
+    return { m_Registry.create(),this };
+  }
+
+
 }
 
-void Platypus::Scene::OnRender()
-{
-  Render2D::Begin();
-
-
-  Render2D::End();
-}

@@ -22,6 +22,9 @@
     <ClInclude Include="src\Platypus\Scene.h">
       <Filter>Platypus</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platypus\ECS\Entity.h" />
+    <ClInclude Include="src\Platypus\ECS\Components.h" />
+    <ClInclude Include="src\Platypus\Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platypus\Application.cpp">
@@ -33,5 +36,7 @@
     <ClCompile Include="src\Platypus\Scene.cpp">
       <Filter>Platypus</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platypus\ECS\Entity.cpp" />
+    <ClCompile Include="src\Platypus\Texture.cpp" />
   </ItemGroup>
 </Project>

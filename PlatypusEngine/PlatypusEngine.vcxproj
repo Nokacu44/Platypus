@@ -149,17 +149,22 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platypus\ECS\Components.h" />
+    <ClInclude Include="src\Platypus\ECS\Entity.h" />
     <ClInclude Include="src\Platypus.h" />
     <ClInclude Include="src\Platypus\Application.h" />
     <ClInclude Include="src\Platypus\Core.h" />
     <ClInclude Include="src\Platypus\EntryPoint.h" />
     <ClInclude Include="src\Platypus\Render2D.h" />
     <ClInclude Include="src\Platypus\Scene.h" />
+    <ClInclude Include="src\Platypus\Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platypus\ECS\Entity.cpp" />
     <ClCompile Include="src\Platypus\Application.cpp" />
     <ClCompile Include="src\Platypus\Render2D.cpp" />
     <ClCompile Include="src\Platypus\Scene.cpp" />
+    <ClCompile Include="src\Platypus\Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

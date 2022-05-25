@@ -1,14 +1,35 @@
 #include "Platypus.h"
 
+Platypus::Entity entity;
+class MainScene : virtual public Platypus::Scene
+{
+public:
+  MainScene() {
 
-class SandBox : public Platypus::Application
+    entity = this->CreateEntity();
+    entity.AddComponent<Platypus::SpriteComponent>(Platypus::Texture::loadTexture("./assets/cowboy.png"), 128, 128);
+    entity.AddComponent<Platypus::PositionComponent>(100, 100);
+   }
+
+  void OnUpdate() override
+  {
+    entity.GetComponent<Platypus::PositionComponent>().x += 1;
+  }
+
+  void OnRender() override
+  {
+
+  }
+};
+
+class SandBox : virtual public Platypus::Application
 {
 public:
 
-  SandBox (int const width,int const height) 
-    : Application::Application(width,height)
+  SandBox (char* title,int const width,int const height) 
+  : Application::Application(title, width, height)
   {
-
+    firstScene = new MainScene();
   }
   ~SandBox()
   {
@@ -16,9 +37,11 @@ public:
   }
 };
 
+
+
 Platypus::Application* Platypus::CreateApplication()
 {
-  return new SandBox(800, 600);
+  return new SandBox("PLATYPUS GAME YEE", 800, 600);
 }
 
 
