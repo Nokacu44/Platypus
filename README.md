@@ -7,4 +7,4 @@ This project set up and insipration is primarly based on the Cherno's GAME ENGIN
 Platypus Engine is only avaible for windows, even if linux development is planned.
 
 # Features
--*ECS*
+- *Entity Component System*
